@@ -23,7 +23,6 @@ func secondCheck(arrOfCircle: [Checker.Circle]) -> [Checker.Circle] {
     var result = [Checker.Circle]()
     var tempCircle = Checker.Circle(radius: 0, color: .white)
     var tempBlue = [Checker.Circle]()
-    
     for circle in arrOfCircle {
         tempCircle = circle
         switch circle.color {
@@ -42,7 +41,6 @@ func secondCheck(arrOfCircle: [Checker.Circle]) -> [Checker.Circle] {
         }
     }
     result.append(contentsOf: tempBlue)
-    
     return result
 }
 
@@ -51,7 +49,6 @@ checker.checkSecondFunction(function: secondCheck)
 func thirdFunction(dictionary: [Checker.EmployeeData]) -> [Checker.Employee] {
     var employee: [Checker.Employee] = []
     let newArray = ["fullName":"", "salary":"", "company":""]
-    
     for key in dictionary {
         if key.keys == newArray.keys {
             if let fullName = key["fullName"], let salary = key["salary"], let company = key["company"] {
@@ -65,7 +62,6 @@ func thirdFunction(dictionary: [Checker.EmployeeData]) -> [Checker.Employee] {
 checker.checkThirdFunction(function: thirdFunction)
 
 func fourthFunction(array: [String]) -> [String : [String]] {
-   // let newDict = Dictionary(grouping: array, by: { String($0.first!) })
     var newDict = Dictionary(grouping: array, by: { String($0.first!) })
     for (key, value) in newDict {
         if value.count < 2 {
